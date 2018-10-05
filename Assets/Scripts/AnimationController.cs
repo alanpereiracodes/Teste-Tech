@@ -61,11 +61,11 @@ public class AnimationController : MonoBehaviour {
                 nowPlayingText.text += "Jump";
                 break;
             case 4:
-                nowPlayingText.text += "Physical Special";
+                nowPlayingText.text += "Special 1";
                 Invoke("ThrowSmokeBomb", smokeBombInterval);
                 break;
             case 5:
-                nowPlayingText.text += "Magical Special";
+                nowPlayingText.text += "Special 2";
                 energyBallAnim.SetBool("throw", true);
                 break;
         }
