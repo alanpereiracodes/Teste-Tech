@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class CameraController : MonoBehaviour {
 
     public GameObject sideCamera, topCamera;
+
+    //UI
     public Text currentCameraText;
 
     //Changes the camera based in the following values: 0 = Main, 1 = Side and 2 = Top.

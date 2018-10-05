@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class AnimationController : MonoBehaviour {
 
-    //
+    //Time of the throwing animation.
+    public float smokeBombInterval = .5f;
+
+    public ParticleSystem smokeBomb;
+
+    //UI
     public Text nowPlayingText;
 
-    //
+    //Internal
     private Animator characterAnim;
 
     private void Awake()
@@ -23,6 +28,10 @@ public class AnimationController : MonoBehaviour {
 
     public void ChangeAnimationState(int stateNumber)
     {
+        //If the state to change is the same number of the animation that is playing, do nothing.
+        if (stateNumber == characterAnim.GetInteger("animState"))
+            return;
+
         //Clamp the value to fit the current number of animation states.
         stateNumber = Mathf.Clamp(stateNumber, 0, 5);
 
@@ -31,6 +40,9 @@ public class AnimationController : MonoBehaviour {
 
         //Change the Text for the current Animation
         nowPlayingText.text = "Now Playing:  ";
+
+        //Stops Smoke Bomb if its already playing
+        smokeBomb.Stop();
 
         switch(stateNumber)
         {
@@ -48,6 +60,7 @@ public class AnimationController : MonoBehaviour {
                 break;
             case 4:
                 nowPlayingText.text += "Physical Special";
+                Invoke("ThrowSmokeBomb", smokeBombInterval);
                 break;
             case 5:
                 nowPlayingText.text += "Magical Special";
@@ -55,5 +68,10 @@ public class AnimationController : MonoBehaviour {
         }
 
     }//END Change Animation State function.
+
+    public void ThrowSmokeBomb()
+    {
+        smokeBomb.Play();
+    }
 
 }//END Animation Controller class.
