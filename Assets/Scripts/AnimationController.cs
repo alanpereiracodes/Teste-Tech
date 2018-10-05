@@ -14,12 +14,13 @@ public class AnimationController : MonoBehaviour {
     public Text nowPlayingText;
 
     //Internal
-    private Animator characterAnim;
+    private Animator characterAnim, energyBallAnim;
 
     private void Awake()
     {
         //Get Animator Controller of the Character Game Object in the Hierarchy.
         characterAnim = GameObject.FindWithTag("Player").GetComponentInChildren<Animator>();
+        energyBallAnim = GameObject.FindWithTag("FX").GetComponentInChildren<Animator>();
 
         //Set the State for the default 0 (Idle).
         characterAnim.SetInteger("animState", 0);
@@ -41,8 +42,9 @@ public class AnimationController : MonoBehaviour {
         //Change the Text for the current Animation
         nowPlayingText.text = "Now Playing:  ";
 
-        //Stops Smoke Bomb if its already playing
+        //Stops Smoke Bomb/Energy Ball if its already playing
         smokeBomb.Stop();
+        energyBallAnim.SetBool("throw", false);
 
         switch(stateNumber)
         {
@@ -64,6 +66,7 @@ public class AnimationController : MonoBehaviour {
                 break;
             case 5:
                 nowPlayingText.text += "Magical Special";
+                energyBallAnim.SetBool("throw", true);
                 break;
         }
 
