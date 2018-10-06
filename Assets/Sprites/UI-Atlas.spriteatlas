@@ -33,13 +33,17 @@ SpriteAtlas:
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: bbea513035dbf473c94bef464808f665, type: 3}
   - {fileID: 21300000, guid: edf711441da8c428bae528686532e5e4, type: 3}
   - {fileID: 21300000, guid: c6e1c1cabbcb24e8fa0372a11a27535e, type: 3}
+  - {fileID: 21300000, guid: 6ed1021ce31204b00bf397803a666c77, type: 3}
   - {fileID: 21300000, guid: 8bba60bd272ff4978982a12a88f56b11, type: 3}
   - {fileID: 21300000, guid: a0c4441e403ea437ca79f6f9b5b15da8, type: 3}
   m_PackedSpriteNamesToIndex:
+  - UI_Icon_Camera
   - UI_Button_Standard_Orange
   - UI_Tab_Active
+  - UI_Icon_FilmPlay
   - UI_Panel_Window
   - UI_Panel_Content
   m_Tag: UI-Atlas
