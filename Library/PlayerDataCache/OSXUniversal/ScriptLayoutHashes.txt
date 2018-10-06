@@ -1,6 +1,6 @@
 OSXStandalone
 PlayerPath?
-/Users/alan.pereira/Unity Projects/Teste Tech/Build para Mac.app
+/Users/alan.pereira/Downloads/Build para Mac.app
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
